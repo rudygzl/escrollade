@@ -18145,7 +18145,90 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../.nvm/versions/node/v13.7.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/index.js":[function(require,module,exports) {
+},{"_css_loader":"../../../.nvm/versions/node/v13.7.0/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../src/scrollmagic.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fly = fly;
+exports.fly1 = fly1;
+exports.fly2 = fly2;
+exports.fly3 = fly3;
+
+// oiseau
+function fly() {
+  var bird = document.getElementById("bird");
+  var x = -500;
+  var y = 0;
+  var id = setInterval(frame, 6);
+
+  function frame() {
+    x++;
+    bird.style.left = x + "px";
+    y += .1;
+    bird.style.top = y + "px";
+
+    if (x == 2000) {
+      clearInterval(id);
+    }
+  }
+}
+
+function fly1() {
+  var bird = document.getElementById("bird1");
+  var x = -500;
+  var y = 80;
+  var id = setInterval(frame, 6);
+
+  function frame() {
+    x++;
+    bird.style.left = x + "px";
+    y += .1;
+    bird.style.top = y + "px";
+
+    if (x == 1800) {
+      clearInterval(id);
+    }
+  }
+}
+
+function fly2() {
+  var bird = document.getElementById("bird2");
+  var x = -500;
+  var y = 80;
+  var id = setInterval(frame, 6);
+
+  function frame() {
+    x++;
+    bird.style.left = x + "px";
+    y += .1;
+    bird.style.top = y + "px";
+
+    if (x == 1800) {
+      clearInterval(id);
+    }
+  }
+}
+
+function fly3() {
+  var bird = document.getElementById("bird3");
+  var x = -500;
+  var y = 40;
+  var id = setInterval(frame, 6);
+
+  function frame() {
+    x++;
+    bird.style.left = x + "px";
+    y += .1;
+    bird.style.top = y + "px";
+
+    if (x == 1800) {
+      clearInterval(id);
+    }
+  }
+}
+},{}],"../src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _jquery = _interopRequireDefault(require("jquery"));
@@ -18156,6 +18239,8 @@ require("bootstrap");
 
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 
+var _scrollmagic = require("./scrollmagic");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery.default)(document).ready(function () {
@@ -18165,10 +18250,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var scene1 = new ScrollMagic.Scene({
     triggerElement: '#scene1',
     duration: 500,
-    offset: 300
+    offset: 5000
+  }).on('start', function () {
+    (0, _scrollmagic.fly)();
+    (0, _scrollmagic.fly1)();
+    (0, _scrollmagic.fly2)();
+    (0, _scrollmagic.fly3)();
   }).setClassToggle('#scene1', 'changeBackground').addTo(controller);
 });
-},{"jquery":"../node_modules/jquery/dist/jquery.js","../public/style.css":"style.css","bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.js","../node_modules/bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css"}],"../../../.nvm/versions/node/v13.7.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _jquery.default)(function () {
+  // wait for document ready
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave',
+      duration: "100%" // this works just fine with duration 0 as well
+      // However with large numbers (>20) of pinned sections display errors can occur so every section should be unpinned once it's covered by the next section.
+      // Normally 100% would work for this, but here 200% is used, as Panel 3 is shown for more than 100% of scrollheight due to the pause.
+
+    }
+  }); // get all slides
+
+  var slides = document.querySelectorAll("div.panel"); // create scene for every slide
+
+  for (var i = 0; i < slides.length; i++) {
+    new ScrollMagic.Scene({
+      triggerElement: slides[i]
+    }).setPin(slides[i], {
+      pushFollowers: false
+    }).addTo(controller);
+  }
+});
+},{"jquery":"../node_modules/jquery/dist/jquery.js","../public/style.css":"style.css","bootstrap":"../node_modules/bootstrap/dist/js/bootstrap.js","../node_modules/bootstrap/dist/css/bootstrap.min.css":"../node_modules/bootstrap/dist/css/bootstrap.min.css","./scrollmagic":"../src/scrollmagic.js"}],"../../../.nvm/versions/node/v13.7.0/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -18196,7 +18309,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32959" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36259" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

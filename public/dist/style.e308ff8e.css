@@ -1,6 +1,6 @@
 * {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0; 
 }
 
 body {
@@ -35,5 +35,83 @@ body {
 .changeBackground {
     background-color: blue !important;
 }
+/*Nuage*/
+#anim {
+    overflow: hidden;
+}
+
+#anim ul.cloud {
+    text-align: center;
+    list-style: none;
+}
+
+/*Selects every <p> element that is the first child of its parent:*/
+#anim ul.cloud li {
+    color: #DCDCDC;
+    font-size: 200px;
+    position: absolute;
+}
+
+/* Durée animation mes lapinoux */
+/*Selects every <p> element that is the second child of its parent:*/
+#anim ul.cloud li:nth-child(1) {
+    -webkit-animation: cloud-move 9s linear infinite normal;
+    animation: cloud-move 9s linear infinite normal;
+}
+
+#anim ul.cloud li:nth-child(2) {
+    -webkit-animation: cloud-move 11s linear infinite normal;
+    animation: cloud-move 11s linear infinite normal;
+}
+
+/* Distance de l'animation mes lapinoux ! */
+
+@-webkit-keyframes cloud-move {
+    0% {
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);
+    }
+
+    100% {
+        -webkit-transform: translateX(1500px);
+        transform: translateX(1500px);
+    }
+}
+
+@keyframes cloud-move {
+    0% {
+        -webkit-transform: translateX(-150px);
+        transform: translateX(-150px);
+    }
+
+    100% {
+        -webkit-transform: translateX(1550px);
+        transform: translateX(1550px);
+    }
+}
+/* Oiseau */
+
+#container {
+    width: 1500px;
+    height: 500px;
+    position: relative;
+  }
+  #bird {
+    height: 100px;
+    position: absolute;
+  }
+  #bird1 {
+    height: 100px;
+    position: absolute;
+  }
+  #bird2 {
+    height: 100px;
+    position: absolute;
+  }
+  #bird3 {
+    height: 100px;
+    position: absolute;
+  }
+
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */

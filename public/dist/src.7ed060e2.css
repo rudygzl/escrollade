@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0; 
+    margin: 0 !important;
+    padding: 0 !important; 
 }
 
 body {
@@ -35,6 +35,79 @@ body {
 .changeBackground {
     background-color: blue !important;
 }
+/*Nuage*/
+#anim {
+    overflow: hidden;
+}
+
+#anim ul.cloud {
+    text-align: center;
+    list-style: none;
+}
+
+/*Selects every <p> element that is the first child of its parent:*/
+#anim ul.cloud li {
+    color: #DCDCDC;
+    font-size: 200px;
+    position: absolute;
+}
+
+/* Durée animation mes lapinoux */
+/*Selects every <p> element that is the second child of its parent:*/
+#anim ul.cloud li:nth-child(1) {
+    -webkit-animation: cloud-move 9s linear infinite normal;
+    animation: cloud-move 9s linear infinite normal;
+}
+
+#anim ul.cloud li:nth-child(2) {
+    -webkit-animation: cloud-move 11s linear infinite normal;
+    animation: cloud-move 11s linear infinite normal;
+}
+
+/* Distance de l'animation mes lapinoux ! */
+
+@-webkit-keyframes cloud-move {
+    0% {
+        -webkit-transform: translateX(-300px);
+        transform: translateX(-300px);
+    }
+
+    100% {
+        -webkit-transform: translateX(2000px);
+        transform: translateX(2000px);
+    }
+}
+
+@keyframes cloud-move {
+    0% {
+        -webkit-transform: translateX(-300px);
+        transform: translateX(-300px);
+    }
+
+    100% {
+        -webkit-transform: translateX(2000px);
+        transform: translateX(2000px);
+    }
+}
+/* Oiseau */
+
+  #bird {
+    height: 100px;
+    position: relative;
+  }
+  #bird1 {
+    height: 100px;
+    position: relative;
+  }
+  #bird2 {
+    height: 100px;
+    position: relative;
+  }
+  #bird3 {
+    height: 100px;
+    position: relative;
+  }
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
