@@ -1,0 +1,31 @@
+body {
+    height: 5000px;
+}
+
+.size {
+    height: 3000px;
+    width: 2177px;
+}
+.size2 {
+    height: 3072px;
+    width: 2048px;
+}
+.size3 {
+    height: 1599px;
+    width: 1066px;
+}
+
+
+#scene1 {
+    background-image: url(img/rock.png);
+}
+#scene2 {
+    background-image: url(img/rock2.png);
+}
+#scene3 {
+    background-image: url(img/rock3.png);
+}
+
+.changeBackground {
+    background-color: blue !important;
+}
