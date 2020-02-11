@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import '../public/style.css'
 import 'bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 

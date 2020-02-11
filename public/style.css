@@ -1,5 +1,11 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
 body {
     height: 5000px;
+    overflow-x: hidden;
 }
 
 .size {
@@ -8,11 +14,11 @@ body {
 }
 .size2 {
     height: 3072px;
-    width: 2048px;
+    width: 2177px;
 }
 .size3 {
     height: 1599px;
-    width: 1066px;
+    width: 2177px;  
 }
 
 

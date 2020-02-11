@@ -1,3 +1,40 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    height: 5000px;
+    overflow-x: hidden;
+}
+
+.size {
+    height: 3000px;
+    width: 2177px;
+}
+.size2 {
+    height: 3072px;
+    width: 2177px;
+}
+.size3 {
+    height: 1599px;
+    width: 2177px;  
+}
+
+
+#scene1 {
+    background-image: url(/rock.8c9e56e5.png);
+}
+#scene2 {
+    background-image: url(/rock2.24003608.png);
+}
+#scene3 {
+    background-image: url(/rock3.f7764684.png);
+}
+
+.changeBackground {
+    background-color: blue !important;
+}
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
